@@ -13,14 +13,16 @@ namespace ExamenFinalPratique
         Electrique
     }
 
-    public class Guitare : InstrumentACordes
+    public class Guitare : InstrumentACorde
     {
         Random random = new Random();
-        public Guitare(string nom, int prixAchat) : base(nom, prixAchat)
+        public Guitare(string nom, int nbCorde) : base(nom, nbCorde)
         {
-            if (random.Next(1, 4) == 1)
+            int choix = random.Next(1, 4);
+
+            if (choix == 1)
                 nom += typeG.Acoustique;
-            else if (random.Next(0, 3) == 2)
+            else if (choix == 2)
                 nom += typeG.Basse;
             else nom += typeG.Electrique;
         }

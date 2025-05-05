@@ -18,6 +18,12 @@ namespace ExamenFinalPratique
             Durabilite = Resistance * 2;
         }
 
+        public Corde(int resistance)
+        {
+            Resistance = resistance;
+            Durabilite = Resistance * 2;
+        }
+
         public void CreerCordes(int nombre)
         {
             for (int i = 0; i < nombre; i++)

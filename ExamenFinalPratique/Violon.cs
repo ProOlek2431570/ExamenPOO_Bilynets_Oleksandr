@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ExamenFinalPratique
 {
-    public class Violon : InstrumentACordes
+    public class Violon : InstrumentACorde
     {
         Random random = new Random();
         public Violon(string nom, int prixAchat) : base(nom, prixAchat)
