@@ -12,6 +12,8 @@ namespace ExamenFinalPratique
         public int Niveau { get; set; } = 1;
         public string PreferenceInstr { get; set; }
         public int MontantArgent { get; set; }
+        public InstrumentACorde Instrument { get; set; }
+        public List<PieceMusique> PiecesMusique { get; set; }
 
         public Musicien(string nom, int niveau, string preferenceInstr, int montantArgent)
         {
@@ -19,18 +21,27 @@ namespace ExamenFinalPratique
             Niveau = niveau;
             PreferenceInstr = preferenceInstr;
             MontantArgent = montantArgent;
+            Instrument = null;
+            PiecesMusique = new List<PieceMusique>();
+            PiecesMusique.Add(new PieceMusique( Difficulte.Facile));
         }
 
         public override string ToString()
         {
-            string info = "";
-            return info += $"Bienvenue à la simulation de votre nouvelle carrière de musicien \n" +
+            string message = "";
+
+            if (Instrument == null)
+                message = "Vous n'avez pas d'instrument !";
+            else
+                message = Instrument.ToString();
+
+            return $"Bienvenue à la simulation de votre nouvelle carrière de musicien \n" +
                 $"Info Musicien\n" +
                 $"Votre nom: {Nom}\n" +
                 $"Instrument Préféré: {PreferenceInstr}\n" +
                 $"Niveau: {Niveau} \n" +
                 $"Votre montant actuel est de {MontantArgent} $\n" +
-                $"Vous n'avez pas encore d'instrument...\n";
+                $"{message}\n";
         }
 
     }

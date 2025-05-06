@@ -8,19 +8,26 @@ namespace ExamenFinalPratique
 {
     public class InstrumentACorde 
     {
-        string Nom {  get; set; }
+        public string Nom {  get; set; }
         public int PrixAchat { get; set; }
 
         public Corde Corde { get; set; }
         public int NbCorde { get; set; }    
 
         //TODO : remettre la constructeur protected
-        public InstrumentACorde(string nom,int nbCorde) : base()
+        public InstrumentACorde(string nom,int nbCorde) 
         {
             Nom = nom;
             Corde = new Corde();
             PrixAchat = Corde.Resistance * 200;
             NbCorde = nbCorde;
+        }
+        public InstrumentACorde(int resistance) 
+        {
+            Nom = "";
+            Corde = new Corde(resistance);
+            PrixAchat = Corde.Resistance * 200;
+            NbCorde = 4;
         }
 
         public InstrumentACorde VerifierInstrument(InstrumentACorde instrument1, InstrumentACorde instrument2)

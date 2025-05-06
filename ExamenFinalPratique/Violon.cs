@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace ExamenFinalPratique
 {
+
     public class Violon : InstrumentACorde
     {
         Random random = new Random();
-        public Violon(string nom, int prixAchat) : base(nom, prixAchat)
+        public Violon() : base("",4)
         {
-
             List<string> noms = new List<string> { "Guarneri", " Stradivarius", " Amati ", " Giuseppe " };
-            foreach (var item in noms[random.Next(0, 4)])
-                nom = $"Violon + {item}";
-
+            Nom = $"Violon + {noms[random.Next(0, 4)]}";           
         }
 
         public override string ToString()

@@ -16,15 +16,15 @@ namespace ExamenFinalPratique
     public class Guitare : InstrumentACorde
     {
         Random random = new Random();
-        public Guitare(string nom, int nbCorde) : base(nom, nbCorde)
+        public Guitare() : base("Guitare", 6)
         {
             int choix = random.Next(1, 4);
 
             if (choix == 1)
-                nom += typeG.Acoustique;
+                Nom += typeG.Acoustique;
             else if (choix == 2)
-                nom += typeG.Basse;
-            else nom += typeG.Electrique;
+                Nom  += typeG.Basse;
+            else Nom += typeG.Electrique;
         }
 
         public override string ToString()
